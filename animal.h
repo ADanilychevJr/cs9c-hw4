@@ -10,11 +10,11 @@ typedef struct positionStruct *PositionType;
 /*
  * Return an animal tree (from file, if specified).
  */
-TreeType InitTree (char *file);
+TreeType InitTree ();
 void PrintTree (TreeType tree);
 PositionType Top (TreeType tree);
-int IsLeaf (TreeType tree, PositionType pos);
-int Answer (char *question);
+boolean IsLeaf (TreeType tree, PositionType pos);
+boolean Answer (char *question);
 char *Question (TreeType tree, PositionType pos);
 char *Guess (TreeType tree, PositionType pos);
 PositionType YesNode (TreeType tree, PositionType pos);
