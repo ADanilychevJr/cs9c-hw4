@@ -1,7 +1,3 @@
-typedef int boolean;
-#define FALSE 0
-#define TRUE !FALSE
-#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -17,8 +13,8 @@ typedef struct positionStruct *PositionType;
 TreeType InitTree (char *file);
 void PrintTree (TreeType tree);
 PositionType Top (TreeType tree);
-bool IsLeaf (TreeType tree, PositionType pos);
-bool Answer (char *question);
+int IsLeaf (TreeType tree, PositionType pos);
+int Answer (char *question);
 char *Question (TreeType tree, PositionType pos);
 char *Guess (TreeType tree, PositionType pos);
 PositionType YesNode (TreeType tree, PositionType pos);
