@@ -166,6 +166,7 @@ PositionType NoNode (TreeType tree, PositionType pos){
     newpos->nodeIndex = (2 * pos->nodeIndex) + 2;
     if (newpos->nodeIndex >= MAXNUMQS){
         printf("Tree out of bounds problem for no index:%d\n",newpos->nodeIndex);
+        exit(0);
     } else {
         return newpos;
     }
