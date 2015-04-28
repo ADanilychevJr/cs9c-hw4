@@ -40,7 +40,7 @@ void PrintTree(TreeType tree){
     int i = 0;
     printf("Tree:\n");
     for (i; i < MAXNUMQS; i++){
-        printf("%d: %s\n",i,&tree->nodes[i]);
+        printf("%d: %s\n",i,tree->nodes[i]);
     }
 }
 
