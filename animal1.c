@@ -63,12 +63,10 @@ char *Guess (TreeType tree, PositionType pos){
 }
 
 PositionType YesNode (TreeType tree, PositionType pos){
-    PositionType pos = malloc(sizeof(PositionType));
     return pos;
 }
 
 PositionType NoNode (TreeType tree, PositionType pos){
-    PositionType pos = malloc(sizeof(PositionType));
     return pos;
 }
 
