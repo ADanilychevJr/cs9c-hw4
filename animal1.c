@@ -34,7 +34,7 @@ void PrintTree(TreeType tree){
 }
 
 PositionType Top (TreeType tree){
-    PositionType pos;
+    PositionType pos = malloc(sizeof(PositionType));
     if (strlen(tree->nodes[0]) > 0){
         pos->nodeIndex = 0;
         return pos;
@@ -42,4 +42,44 @@ PositionType Top (TreeType tree){
         printf("Tree has not been properly initialized\n");
         exit(1);
     }
+}
+
+boolean IsLeaf (TreeType tree, PositionType pos) {
+    return true;
+}
+
+boolean Answer (char *question){
+    return true;
+}
+
+char *Question (TreeType tree, PositionType pos){
+    char * question = "Hello";
+    return question;
+}
+
+char *Guess (TreeType tree, PositionType pos){
+    char * guess = "guess";
+    return guess;
+}
+
+PositionType YesNode (TreeType tree, PositionType pos){
+    PositionType pos = malloc(sizeof(PositionType));
+    return pos;
+}
+
+PositionType NoNode (TreeType tree, PositionType pos){
+    PositionType pos = malloc(sizeof(PositionType));
+    return pos;
+}
+
+void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
+    return;
+}
+
+void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ){
+    return;
+}
+
+void WriteTree(TreeType tree, char *file){
+    return;
 }
