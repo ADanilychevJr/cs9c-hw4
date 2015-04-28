@@ -93,8 +93,8 @@ boolean IsLeaf (TreeType tree, PositionType pos) {
     }
 }
 
-boolean isInBounds(PositionType pos){
-    if (pos->nodeIndex > MAXNUMQS-1){
+boolean isInBounds(int pos){
+    if (pos > MAXNUMQS-1){
         return FALSE;
     } else {
         return TRUE;
