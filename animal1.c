@@ -49,6 +49,7 @@ PositionType Top (TreeType tree){
     if (strlen(tree->nodes[0]) > 0){
         printf("%s\n",tree->nodes[4]);
         printf("%s\n",tree->nodes[2]);
+        printf("%s\n",tree->nodes[4]);
         pos->nodeIndex = 0;
         return pos;
     } else {
