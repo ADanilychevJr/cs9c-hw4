@@ -9,5 +9,6 @@ struct positionStruct {
 };
 
 TreeType InitTree () {
-    TreeType tree = {"Random", "Questions"};
+    TreeType tree = malloc(sizeof(TreeType));
+    return tree;
 }
