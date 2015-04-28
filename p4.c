@@ -1,11 +1,10 @@
 /* DO NOT MODIFY THIS FILE */
 
-#define FALSE 0
-#define TRUE !FALSE
 #define MAXSTR 80
-#include <stdio.h>
 
+#include <stdio.h>
 #include "animal.h"
+#include <stdbool.h>
 
 /*
  *  Play the "animal" game, in which the program attempts to guess an animal
@@ -42,7 +41,7 @@ int main (int argc, char *argv[])
     printf("%s", "Think of an animal. I will try to guess what it is.\n"
 		 "Please answer my questions with yes or no.\n");
 
-    while (TRUE) {
+    while (true) {
         pos = Top (tree);
         while (!IsLeaf (tree, pos)) {
             pos = Answer(Question(tree,pos))? 
