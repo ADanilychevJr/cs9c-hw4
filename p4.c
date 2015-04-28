@@ -44,7 +44,6 @@ int main (int argc, char *argv[])
     while (true) {
         pos = Top (tree);
         PrintTree(tree);
-        printf("%i\n",pos->nodeIndex);
         while (!IsLeaf (tree, pos)) {
             pos = Answer(Question(tree,pos))? 
 	       YesNode(tree,pos): NoNode(tree,pos);
