@@ -173,6 +173,21 @@ PositionType NoNode (TreeType tree, PositionType pos){
 }
 
 void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
+    int yesPosition = (pos->nodeIndex * 2) +1;
+    int noPosition = (pos->nodeIndex *2) + 2;
+    if (!isInBounds(yesPosition)){
+        printf("Not enough space to put new yes answer\n");
+        return;
+    } else if (!isInBounds(noPosition)){
+        printf("Not enough space to put new no answer\n");
+        return;
+    }
+    char * old;
+    old = tree->nodes[pos->nodeIndex];
+    tree->nodes[pos->nodeIndex] = calloc(MAXSTRLEN,sizeof(char));
+    strcpy(tree->nodes[pos->nodeIndex],newQ);
+    strcpy(tree->nodes[yesPosition],old);//Yes answer is old
+    strcpy(tree->nodes[noPosition],newA); //No answer is the newA
     return;
 }
 
