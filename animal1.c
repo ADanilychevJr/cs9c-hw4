@@ -128,7 +128,7 @@ char * getUserInput(){
 }
 
 char *Question (TreeType tree, PositionType pos){
-    if (strlen(tree->nodes[pos]) >0){
+    if (strlen(tree->nodes[pos->nodeIndex]) >0){
         char * question;
         question = tree->nodes[pos->nodeIndex];
         return question;
