@@ -7,6 +7,8 @@
 
 #define MAXSTRLEN 80
 #define MAXNUMQS 32
+#define FALSE 0
+#define TRUE !FALSE
 
 
 struct treeStruct {
@@ -87,6 +89,14 @@ boolean IsLeaf (TreeType tree, PositionType pos) {
         }
     }
     else { //Children would be out of bounds
+        return TRUE;
+    }
+}
+
+boolean isInBounds(PositionType pos){
+    if (pos->nodeIndex > MAXNUMQS-1){
+        return FALSE;
+    } else {
         return TRUE;
     }
 }

@@ -27,4 +27,6 @@ void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ);
 void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ);
 void WriteTree(TreeType tree, char *file);
 
+boolean isInBounds(PositionType pos); //My own helper method
+
 #endif
