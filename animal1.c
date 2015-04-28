@@ -54,7 +54,41 @@ PositionType Top (TreeType tree){
 }
 
 boolean IsLeaf (TreeType tree, PositionType pos) {
-    return true;
+    int yes = (2* pos->nodeIndex) + 1;
+    int no = (2 * pos->nodeIndex) + 2;
+    char * yesChild=NULL; char * noChild=NULL;
+    if (isInBounds(yes)){
+        yesChild = tree->nodes[yes];
+    }
+    if (isInBounds(no)){
+        noChild = tree->nodes[no];
+    }
+    if (tree->nodes[pos] == NULL){
+        printf("IsLeaf called on a Null string at pos %d \n",pos->nodeIndex);
+        return FALSE;
+    } else if (yesChild !=NULL && noChild != NULL){//2 Children
+        if ((strlen(yesChild) == 0) && (strlen(noChild) == 0)){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } else if (yesChild != NULL){
+        if (strlen(yesChild) == 0){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } else if (noChild != NULL){
+        if (strlen(noChild) == 0){
+            return TRUE;
+        } else {
+            printf("Is not a leaf?\n");
+            return FALSE;
+        }
+    }
+    else { //Children would be out of bounds
+        return TRUE;
+    }
 }
 
 boolean Answer (char *question){
