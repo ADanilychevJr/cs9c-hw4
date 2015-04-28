@@ -65,7 +65,7 @@ boolean IsLeaf (TreeType tree, PositionType pos) {
     if (isInBounds(no)){
         noChild = tree->nodes[no];
     }
-    if (tree->nodes[pos] == NULL){
+    if (tree->nodes[pos->nodeIndex] == NULL){
         printf("IsLeaf called on a Null string at pos %d \n",pos->nodeIndex);
         return FALSE;
     } else if (yesChild !=NULL && noChild != NULL){//2 Children
