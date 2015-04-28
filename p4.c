@@ -40,9 +40,6 @@ int main (int argc, char *argv[])
     PrintTree(tree);
     printf("%s", "Think of an animal. I will try to guess what it is.\n"
 		 "Please answer my questions with yes or no.\n");
-    PrintTree(tree);
-    PrintTree(tree);
-    PrintTree(tree);
     while (true) {
         pos = Top (tree);
         PrintTree(tree);
