@@ -192,6 +192,12 @@ void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
 }
 
 void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ){
+    char * old;
+    printf("I give up. What is it?");
+    *newA = getUserInput();
+    old = tree->nodes[pos->nodeIndex];
+    printf("Provide a question whose answer is yes for %s and no for %s\n",old,*newA);
+    *newQ = getUserInput();
     return;
 }
 
