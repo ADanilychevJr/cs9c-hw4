@@ -1,4 +1,6 @@
-#include "animal.h"
+#ifndef ANIMAL_H
+    #include "animal.h"
+#endif
 
 struct treeStruct {
     char *nodes[MAXNUMQS];
