@@ -26,6 +26,7 @@ TreeType InitTree () {
     for (i; i < MAXNUMQS; i++){
         char * question = calloc(MAXSTRLEN,sizeof(char));
         tree->nodes[i] = question;
+        printf("%p\n",tree->nodes[i]);
     }
     strcpy(tree->nodes[0],"Is it furry?");
     strcpy(tree->nodes[1],"Does it meow?");
