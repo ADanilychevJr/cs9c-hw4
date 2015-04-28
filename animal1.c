@@ -24,3 +24,22 @@ TreeType InitTree () {
     strcpy(tree->nodes[(2*2)+2],"a gecko");
     return tree;
 }
+
+void PrintTree(TreeType tree){
+    int i = 0;
+    printf("Tree:\n");
+    for (i; i < MAXNUMQS; i++){
+        printf("%d: %s\n",i,tree->nodes[i]);
+    }
+}
+
+PositionType Top (TreeType tree){
+    PositionType pos;
+    if (strlen(tree->nodes[0]) > 0){
+        pos->nodeIndex = 0;
+        return pos;
+    } else {
+        printf("Tree has not been properly initialized\n");
+        exit(1);
+    }
+}
