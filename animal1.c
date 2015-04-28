@@ -18,7 +18,7 @@ struct treeStruct {
 struct positionStruct {
     int nodeIndex;
 };
-
+/*This works, ignore "animal1.c:25: warning: statement with no effect"*/
 TreeType InitTree () {
     TreeType tree = malloc(sizeof(TreeType));
     int i;
@@ -35,7 +35,7 @@ TreeType InitTree () {
     strcpy(tree->nodes[(2*2)+2],"a gecko");
     return tree;
 }
-
+/*This works, ignore "animal1.c:42: warning: statement with no effect"*/
 void PrintTree(TreeType tree){
     int i = 0;
     printf("Tree:\n");
@@ -151,11 +151,24 @@ char *Guess (TreeType tree, PositionType pos){
 }
 
 PositionType YesNode (TreeType tree, PositionType pos){
-    return pos;
+    PositionType newpos;
+    newpos->nodeIndex = (2 * pos->nodeIndex) + 1;
+    if (newpos->nodeIndex >= MAXNUMQS){
+        printf("Tree out of bounds problem for  yes index:%d\n",newpos->nodeIndex);
+        exit(0);
+    } else {
+        return newpos;
+    }
 }
 
 PositionType NoNode (TreeType tree, PositionType pos){
-    return pos;
+    PositionType newpos;
+    newpos->nodeIndex = (2 * pos->nodeIndex) + 2;
+    if (newpos->nodeIndex >= MAXNUMQS){
+        printf("Tree out of bounds problem for no index:%d\n",newpos->nodeIndex);
+    } else {
+        return newpos;
+    }
 }
 
 void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
