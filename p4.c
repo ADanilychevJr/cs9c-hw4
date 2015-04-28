@@ -38,6 +38,7 @@ int main (int argc, char *argv[])
     }
     tree = InitTree (treefile);
     PrintTree(tree);
+    exit(0);
     printf("%s", "Think of an animal. I will try to guess what it is.\n"
 		 "Please answer my questions with yes or no.\n");
 
