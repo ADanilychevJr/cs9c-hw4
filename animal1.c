@@ -133,7 +133,7 @@ char *Question (TreeType tree, PositionType pos){
         question = tree->nodes[pos->nodeIndex];
         return question;
     } else {
-        printf("Tried to get question at position %d but failed\n",pos);
+        printf("Tried to get question at position %d but failed\n",pos->nodeIndex);
         PrintTree(tree);
         return NULL;
     }
