@@ -1,11 +1,12 @@
 #ifndef ANIMAL_H
     #include "animal.h"
-    #define MAXSTRLEN 80
-    #define MAXNUMQS 32
 #endif
 
 #include <stdio.h>
 #include <stdbool.h>
+
+#define MAXSTRLEN 80
+#define MAXNUMQS 32
 
 
 struct treeStruct {
