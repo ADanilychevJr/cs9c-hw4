@@ -3,6 +3,7 @@
 
 #define MAXSTRLEN 80
 #define MAXNUMQS 32
+typedef int boolean;
 
 typedef struct treeStruct *TreeType;
 typedef struct positionStruct *PositionType;

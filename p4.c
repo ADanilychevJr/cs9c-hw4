@@ -1,6 +1,5 @@
 /* DO NOT MODIFY THIS FILE */
 
-typedef int boolean;
 #define FALSE 0
 #define TRUE !FALSE
 #define MAXSTR 80
