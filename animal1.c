@@ -128,13 +128,26 @@ char * getUserInput(){
 }
 
 char *Question (TreeType tree, PositionType pos){
-    char * question = "Hello";
-    return question;
+    if (strlen(tree->nodes[pos]) >0){
+        char * question;
+        question = tree->nodes[pos->nodeIndex];
+        return question;
+    } else {
+        printf("Tried to get question at position %d but failed\n",pos);
+        PrintTree(tree);
+        return NULL;
+    }
 }
 
 char *Guess (TreeType tree, PositionType pos){
-    char * guess = "guess";
-    return guess;
+    char *guess = calloc(MAXSTRLEN,sizeof(char));
+    if ((strlen(tree->nodes[pos->nodeIndex]) != 0)){
+        sprintf(guess, "%s%s%s", "is it ",tree->nodes[pos->nodeIndex],"?");
+        return guess;
+    } else {
+        printf("Called guess on leaf w/ length 0: %s\n", tree->nodes[pos->nodeIndex]);
+        return guess;
+    }
 }
 
 PositionType YesNode (TreeType tree, PositionType pos){
