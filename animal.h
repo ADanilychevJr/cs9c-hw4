@@ -28,5 +28,6 @@ void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ);
 void WriteTree(TreeType tree, char *file);
 
 boolean isInBounds(int pos); //My own helper method
+char * getUserInput();
 
 #endif

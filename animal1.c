@@ -102,7 +102,29 @@ boolean isInBounds(int pos){
 }
 
 boolean Answer (char *question){
-    return true;
+    if (question != NULL){
+        printf("%s\n",question);
+        char * answer;
+        answer = getUserInput();
+        if (answer[0] == 'y'){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    } else {
+        printf("Passed in a null question! Returning False\n");
+        return FALSE;
+    }
+}
+
+char * getUserInput(){
+    char * str = calloc(MAXSTRLEN,sizeof(char));
+    int i = 0; int c;
+    while ((c = getchar())!= '\n'){
+        str[i] = c;
+        i++;
+    }
+    return str;
 }
 
 char *Question (TreeType tree, PositionType pos){
