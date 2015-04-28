@@ -1,6 +1,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+#ifndef ANIMAL_H
+#define ANIMAL_H 1
+
 #define MAXSTRLEN 80
 #define MAXNUMQS 32
 typedef int boolean;
@@ -23,3 +26,5 @@ PositionType NoNode (TreeType tree, PositionType pos);
 void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ);
 void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ);
 void WriteTree(TreeType tree, char *file);
+
+#endif
