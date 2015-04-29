@@ -47,7 +47,7 @@ void PrintTree(TreeType tree){
 }
 
 PositionType Top (TreeType tree){
-    PositionType pos = malloc(sizeof(PositionType));
+    PositionType pos = (PositionType) {0};
     if (strlen(tree->nodes[0]) > 0){
         printf("%d:%s:%p\n",strlen(tree->nodes[4]),tree->nodes[4],tree->nodes[4]);
         printf("%d %s:\n",strlen(tree->nodes[2]),tree->nodes[2]);
