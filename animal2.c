@@ -127,7 +127,7 @@ PositionType YesNode (TreeType tree, PositionType pos){
 }
 
 PositionType NoNode (TreeType tree, PositionType pos){
-    PositionType newpos = malloc(sizeof(PositionType));
+    PositionType newpos = malloc(sizeof(PositionType) +10);
     newpos->node = pos->node->right;
     return newpos;
 }
