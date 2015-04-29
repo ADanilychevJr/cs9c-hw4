@@ -38,8 +38,9 @@ TreeType InitTree (char *file) {
     } else {
         FILE* f = fopen(file, "r");
         if (f == NULL){ printf("Error reading from file\n"); exit(1);}
-        char line[MAXSTRLEN];
+        char line[256];
         int index;
+        printf("Got to here\n");
         while (fscanf(f,"%d %s",index, line) == 2){
             strcpy(tree->nodes[index],line);
         }
