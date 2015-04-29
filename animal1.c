@@ -39,11 +39,13 @@ TreeType InitTree (char *file) {
         FILE* f = fopen(file, "r");
         if (f == NULL){ printf("Error reading from file\n"); exit(1);}
         char line[80];
+        char line2[80];
         int index;
         printf("Got to here\n");
         while (fgets(line,80,f) != NULL){
-            printf("%s\n",line);
-            strcpy(tree->nodes[index],line);
+            printf("%s",line);
+            sscanf(line,"%d %s",&index,line2);
+            strcpy(tree->nodes[index],line2);
         }
         exit(0);
     }
