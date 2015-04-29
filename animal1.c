@@ -47,16 +47,9 @@ void PrintTree(TreeType tree){
 
 PositionType Top (TreeType tree){
     PositionType pos = malloc(sizeof(PositionType)+10);
-    printf("%p:\n",pos);
-    printf("%p:\n",tree);
-    printf("%p:\n",tree->nodes);
-    printf("%p:\n",tree->nodes[0]);
-    printf("%p:\n",tree->nodes[1]);
-    printf("%p:\n",tree->nodes[2]);
     if (strlen(tree->nodes[0]) > 0){
-        printf("%d:%s:\n",strlen(tree->nodes[4]),tree->nodes[4]);
-        printf("%d %s:\n",strlen(tree->nodes[2]),tree->nodes[2]);
-        printf("%d %s:\n",strlen(tree->nodes[4]),tree->nodes[4]);
+        printf("%s:\n",tree->nodes[2]);
+        printf("%s:\n",tree->nodes[4]);
         pos->nodeIndex = 0;
         //printf("asdf\n");
         return pos;
@@ -162,7 +155,7 @@ char *Guess (TreeType tree, PositionType pos){
 }
 
 PositionType YesNode (TreeType tree, PositionType pos){
-    PositionType newpos = (PositionType) {0};
+    PositionType newpos = malloc(sizeof(PositionType)+10);;
     newpos->nodeIndex = (2 * pos->nodeIndex) + 1;
     if (newpos->nodeIndex >= MAXNUMQS){
         printf("Tree out of bounds problem for  yes index:%d\n",newpos->nodeIndex);
@@ -173,7 +166,7 @@ PositionType YesNode (TreeType tree, PositionType pos){
 }
 
 PositionType NoNode (TreeType tree, PositionType pos){
-    PositionType newpos = (PositionType) {0};
+    PositionType newpos = malloc(sizeof(PositionType)+10);;
     newpos->nodeIndex = (2 * pos->nodeIndex) + 2;
     if (newpos->nodeIndex >= MAXNUMQS){
         printf("Tree out of bounds problem for no index:%d\n",newpos->nodeIndex);
