@@ -43,13 +43,10 @@ TreeType InitTree (char *file) {
     addNode(one,"a dog", false);
     addNode(two,"a rhino", true);
     addNode(two,"a gecko", false);
-    PrintTree(tree);
     return tree;
 }
 
 void PrintTree(TreeType tree){
-    printf("%s\n",tree->string);
-    printf("%p\n",tree->left);
     if (tree->left !=NULL){
         PrintTree(tree->left);
     }
