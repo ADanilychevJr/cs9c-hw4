@@ -2,7 +2,10 @@
 #include <stdlib.h>
 
 #ifndef ANIMAL_H
-#define ANIMAL_H 1
+#define ANIMAL_H
+
+#include <stdbool.h>
+#include <stdio.h>
 
 #define MAXSTRLEN 80
 #define MAXNUMQS 32

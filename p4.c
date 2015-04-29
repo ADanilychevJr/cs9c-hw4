@@ -28,6 +28,7 @@
  */
 int main (int argc, char *argv[])
 {
+    printf("Init Tree");
     char *treefile = NULL;
     TreeType tree;
     PositionType pos;
@@ -36,6 +37,7 @@ int main (int argc, char *argv[])
     if (argc > 1) {
         treefile = argv[1];
     }
+    
     tree = InitTree (treefile);
     PrintTree(tree);
     printf("%s", "Think of an animal. I will try to guess what it is.\n"

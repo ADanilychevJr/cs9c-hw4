@@ -2,9 +2,8 @@
     #include "animal.h"
 #endif
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <string.h>
+
+
 
 #define MAXSTRLEN 80
 #define MAXNUMQS 32
