@@ -19,6 +19,7 @@ struct positionStruct {
 TreeType addNode(TreeType parent, char *str, boolean left){
     TreeType child = malloc(sizeof(TreeType));
     child->string = calloc(MAXSTRLEN,1);
+    child->right = NULL; child->left = NULL;
     strcpy(child->string,str);
     if (left){
         parent->left = child;
@@ -33,6 +34,7 @@ TreeType InitTree (char *file) {
     TreeType tree = malloc(sizeof(TreeType));
     tree->string = calloc(MAXSTRLEN,1);
     strcpy(tree->string,"Is it furry?");
+    tree->right = NULL; tree->left = NULL;
     
     TreeType one = addNode(tree,"Does it meow?", true);
     TreeType two = addNode(tree,"Does it have tusks?", false);
