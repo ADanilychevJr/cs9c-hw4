@@ -149,3 +149,7 @@ void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ){
     *newQ = getUserInput();
     return;
 }
+
+void WriteTree(TreeType tree, char *file){
+    return;
+}
