@@ -207,6 +207,7 @@ void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ){
 }
 
 void WriteTree(TreeType tree, char *file){
+    if (file == NULL){ return;}
     FILE *f = fopen(file,"w");
     if (f==NULL){
         printf("Error opening file!\n");
