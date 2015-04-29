@@ -21,7 +21,7 @@ struct positionStruct {
 /*This works, ignore "animal1.c:25: warning: statement with no effect"*/
 TreeType InitTree () {
     
-    TreeType tree = malloc(sizeof(TreeType));
+    TreeType tree = malloc(sizeof(TreeType)+100);
     int i=0;
     for (i; i < MAXNUMQS; i++){
         char * question = calloc(MAXSTRLEN,1);
