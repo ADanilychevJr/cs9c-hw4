@@ -207,5 +207,18 @@ void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ){
 }
 
 void WriteTree(TreeType tree, char *file){
+    FILE *f = fopen(file,"w");
+    if (f==NULL){
+        printf("Error opening file!\n");
+        exit(1);
+    }
+    printf("Writing to %s",file);
+    int i = 0;
+    for (i; i < MAXNUMQS, i++){
+        if (strlen(tree->nodes[i])>0){
+            fprintf(f, "%d %s",i,tree->nodes[i]);
+        }
+    }
+    fclose(f);
     return;
 }
