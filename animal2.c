@@ -129,7 +129,6 @@ PositionType YesNode (TreeType tree, PositionType pos){
 PositionType NoNode (TreeType tree, PositionType pos){
     PositionType newpos;
     newpos->node = pos->node->right;
-    PrintTree(tree);
     return newpos;
 }
 
