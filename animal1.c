@@ -225,7 +225,7 @@ void WriteTree(TreeType tree, char *file){
     int i = 0;
     for (i; i < MAXNUMQS; i++){
         if (strlen(tree->nodes[i])>0){
-            fprintf(f, "%d %s",i,tree->nodes[i]);
+            fprintf(f, "%d %s\n",i,tree->nodes[i]);
         }
     }
     fclose(f);
