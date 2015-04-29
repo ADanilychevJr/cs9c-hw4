@@ -45,12 +45,11 @@ TreeType InitTree (char *file) {
 }
 
 void PrintTree(TreeType tree){
-    char * str = tree->string;
-    printf("%s\n",str);
-    if (tree->left){
+    printf("%s\n",tree->string);
+    if (tree->left !=NULL){
         PrintTree(tree->left);
     }
-    if (tree->right){
+    if (tree->right!=NULL){
         PrintTree(tree->right);
     }
 }
