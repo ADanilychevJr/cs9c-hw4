@@ -46,7 +46,7 @@ void PrintTree(TreeType tree){
 }
 
 PositionType Top (TreeType tree){
-    PositionType pos = malloc(sizeof(PositionType));
+    PositionType pos = malloc(sizeof(PositionType)+10);
     printf("%p:\n",pos);
     printf("%p:\n",tree);
     printf("%p:\n",tree->nodes);
