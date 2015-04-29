@@ -44,7 +44,6 @@ TreeType InitTree (char *file) {
 }
 
 void PrintTree(TreeType tree){
-    int i = 0;
     printf("Tree:\n");
     char * str = tree->string;
     printf("%s\n",str);
@@ -133,7 +132,7 @@ PositionType NoNode (TreeType tree, PositionType pos){
 
 void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
     char * old = pos->node->string;
-    tree->nodes[pos->nodeIndex] = calloc(MAXSTRLEN,sizeof(char));
+//tree->nodes[pos->nodeIndex] = calloc(MAXSTRLEN,sizeof(char));
     
     pos->node->string = newQ;
     addNode(pos->node, old, true);
