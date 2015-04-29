@@ -79,6 +79,7 @@ boolean Answer (char *question){
         if (answer[0] == 'y'){
             return TRUE;
         } else {
+            printf("NO\n");
             return FALSE;
         }
     } else {
