@@ -44,7 +44,7 @@ TreeType InitTree (char *file) {
         printf("Got to here\n");
         while (fgets(line,80,f) != NULL){
             printf("%s",line);
-            sscanf(line,"%d %s",&index,line2);
+            sscanf(line,"%d %[^\t\n]",&index,line2);
             strcpy(tree->nodes[index],line2);
         }
         PrintTree(tree);
