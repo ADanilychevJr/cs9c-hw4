@@ -17,9 +17,10 @@ struct positionStruct {
 };
 
 TreeType addNode(TreeType parent, char *str, boolean left){
-    TreeType child = malloc(sizeof(TreeType));
+    TreeType child = malloc(sizeof(TreeType)+10);
     child->string = calloc(MAXSTRLEN,1);
     child->right = NULL; child->left = NULL;
+    
     strcpy(child->string,str);
     if (left){
         parent->left = child;
@@ -48,12 +49,14 @@ TreeType InitTree (char *file) {
 
 void PrintTree(TreeType tree){
     printf("%s\n",tree->string);
+    printf("%p\n",tree->left);
     if (tree->left !=NULL){
         PrintTree(tree->left);
     }
     if (tree->right!=NULL){
         PrintTree(tree->right);
     }
+    return;
 }
 
 PositionType Top (TreeType tree){
