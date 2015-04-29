@@ -43,8 +43,6 @@ TreeType InitTree (char *file) {
     addNode(one,"a dog", false);
     addNode(two,"a rhino", true);
     addNode(two,"a gecko", false);
-    PrintTree(tree);
-    PrintTree(tree);
     return tree;
 }
 
@@ -62,6 +60,7 @@ void PrintTree(TreeType tree){
 PositionType Top (TreeType tree){
     PositionType pos = malloc(sizeof(PositionType));
     pos->node = tree;
+    PrintTree(tree);
     return pos;
 }
 
