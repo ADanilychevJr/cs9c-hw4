@@ -47,6 +47,7 @@ int main (int argc, char *argv[])
         while (!IsLeaf (tree, pos)) {
             pos = Answer(Question(tree,pos))? 
 	       YesNode(tree,pos): NoNode(tree,pos);
+            printf("%s\n", pos->node->string);
         }
         if (Answer (Guess (tree, pos))) {
             printf ("I got it right!\n");
