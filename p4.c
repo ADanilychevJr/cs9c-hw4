@@ -28,7 +28,7 @@
  */
 int main (int argc, char *argv[])
 {
-    printf("Init Tree");
+    printf("Init Tree\n");
     char *treefile = NULL;
     TreeType tree;
     PositionType pos;
