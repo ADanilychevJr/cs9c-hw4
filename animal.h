@@ -17,7 +17,7 @@ typedef struct positionStruct *PositionType;
 /*
  * Return an animal tree (from file, if specified).
  */
-TreeType InitTree ();
+TreeType InitTree (char *file);
 void PrintTree (TreeType tree);
 PositionType Top (TreeType tree);
 boolean IsLeaf (TreeType tree, PositionType pos);

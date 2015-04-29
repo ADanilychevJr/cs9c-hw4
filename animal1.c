@@ -19,7 +19,7 @@ struct positionStruct {
     int nodeIndex;
 };
 /*This works, ignore "animal1.c:25: warning: statement with no effect"*/
-TreeType InitTree () {
+TreeType InitTree (char *file) {
     
     TreeType tree = malloc(sizeof(TreeType));
     int i=0;
@@ -27,13 +27,17 @@ TreeType InitTree () {
         char * question = calloc(MAXSTRLEN,1);
         tree->nodes[i] = question;
     }
-    strcpy(tree->nodes[0],"Is it furry?");
-    strcpy(tree->nodes[1],"Does it meow?");
-    strcpy(tree->nodes[2],"Does it have tusks?");
-    strcpy(tree->nodes[(2*1)+1],"a cat");
-    strcpy(tree->nodes[(2*1)+2],"a dog");
-    strcpy(tree->nodes[(2*2)+1],"a rhino");
-    strcpy(tree->nodes[(2*2)+2],"a gecko");
+    if (file == NULL){
+        strcpy(tree->nodes[0],"Is it furry?");
+        strcpy(tree->nodes[1],"Does it meow?");
+        strcpy(tree->nodes[2],"Does it have tusks?");
+        strcpy(tree->nodes[(2*1)+1],"a cat");
+        strcpy(tree->nodes[(2*1)+2],"a dog");
+        strcpy(tree->nodes[(2*2)+1],"a rhino");
+        strcpy(tree->nodes[(2*2)+2],"a gecko");
+    } else {
+        
+    }
     return tree;
 }
 /*This works, ignore "animal1.c:42: warning: statement with no effect"*/
