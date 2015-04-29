@@ -43,6 +43,8 @@ TreeType InitTree (char *file) {
     addNode(one,"a dog", false);
     addNode(two,"a rhino", true);
     addNode(two,"a gecko", false);
+    PrintTree(tree);
+    PrintTree(tree);
     return tree;
 }
 
