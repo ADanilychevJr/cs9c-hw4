@@ -111,6 +111,7 @@ char *Guess (TreeType tree, PositionType pos){
     char *guess = calloc(MAXSTRLEN,sizeof(char));
     if ((strlen(pos->node->string) != 0)){
         sprintf(guess, "%s%s%s", "is it ",pos->node->string,"?");
+        printf("%s\n",guess);
         return guess;
     } else {
         printf("Called guess on leaf w/ length 0\n");
