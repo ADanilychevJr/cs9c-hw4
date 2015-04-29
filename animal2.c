@@ -76,10 +76,10 @@ boolean Answer (char *question){
         printf("%s\n",question);
         char * answer;
         answer = getUserInput();
+        free(question);
         if (answer[0] == 'y'){
             return TRUE;
         } else {
-            printf("NO\n");
             return FALSE;
         }
     } else {
