@@ -36,10 +36,10 @@ TreeType InitTree (char *file) {
     
     TreeType one = addNode(tree,"Does it meow?", true);
     TreeType two = addNode(tree,"Does it have tusks?", false);
-    TreeType three = addNode(one,"a cat", true);
-    TreeType four = addNode(one,"a dog", false);
-    TreeType five = addNode(two,"a rhino", true);
-    TreeType six = addNode(two,"a gecko", false);
+    addNode(one,"a cat", true);
+    addNode(one,"a dog", false);
+    addNode(two,"a rhino", true);
+    addNode(two,"a gecko", false);
     return tree;
 }
 
