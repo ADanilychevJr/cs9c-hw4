@@ -38,13 +38,14 @@ TreeType InitTree (char *file) {
     } else {
         FILE* f = fopen(file, "r");
         if (f == NULL){ printf("Error reading from file\n"); exit(1);}
-        char line[256];
+        char line[80];
         int index;
         printf("Got to here\n");
-        while (fscanf(f,"%d %s\n",index, line) != EOF){
+        while (fgets(line,80,f) != NULL){
             printf("%s\n",line);
             strcpy(tree->nodes[index],line);
         }
+        exit(0);
     }
     return tree;
 }
