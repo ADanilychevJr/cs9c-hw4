@@ -58,7 +58,7 @@ void PrintTree(TreeType tree){
 
 PositionType Top (TreeType tree){
     PositionType pos = malloc(sizeof(PositionType));
-    pos = tree;
+    pos->node = tree;
     return pos;
 }
 
@@ -120,11 +120,15 @@ char *Guess (TreeType tree, PositionType pos){
 }
 
 PositionType YesNode (TreeType tree, PositionType pos){
-    return pos->node->left;
+    PositionType newpos;
+    newpos->node = pos->node->left;
+    return newpos;
 }
 
 PositionType NoNode (TreeType tree, PositionType pos){
-    return pos->node->right;
+    PositionType newpos;
+    newpos->node = pos->node->right;
+    return newpos;
 }
 
 void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
