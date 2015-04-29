@@ -119,13 +119,13 @@ char *Guess (TreeType tree, PositionType pos){
 }
 
 PositionType YesNode (TreeType tree, PositionType pos){
-    PositionType newpos;
+    PositionType newpos = malloc(sizeof(PositionType));
     newpos->node = pos->node->left;
     return newpos;
 }
 
 PositionType NoNode (TreeType tree, PositionType pos){
-    PositionType newpos;
+    PositionType newpos = malloc(sizeof(PositionType));
     newpos->node = pos->node->right;
     return newpos;
 }
