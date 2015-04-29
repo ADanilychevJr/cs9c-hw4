@@ -39,12 +39,10 @@ int main (int argc, char *argv[])
     }
     
     tree = InitTree (treefile);
-    PrintTree(tree);
     printf("%s", "Think of an animal. I will try to guess what it is.\n"
 		 "Please answer my questions with yes or no.\n");
     while (true) {
         pos = Top (tree);
-        PrintTree(tree);
         while (!IsLeaf (tree, pos)) {
             pos = Answer(Question(tree,pos))? 
 	       YesNode(tree,pos): NoNode(tree,pos);

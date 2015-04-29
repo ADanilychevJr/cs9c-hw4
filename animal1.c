@@ -51,7 +51,6 @@ PositionType Top (TreeType tree){
         printf("%s:\n",tree->nodes[2]);
         printf("%s:\n",tree->nodes[4]);
         pos->nodeIndex = 0;
-        //printf("asdf\n");
         return pos;
     } else {
         printf("Tree has not been properly initialized\n");
