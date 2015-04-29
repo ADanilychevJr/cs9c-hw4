@@ -36,13 +36,13 @@ TreeType InitTree (char *file) {
         strcpy(tree->nodes[(2*2)+1],"a rhino");
         strcpy(tree->nodes[(2*2)+2],"a gecko");
     } else {
-        strcpy(tree->nodes[0],"Is it furry?");
-        strcpy(tree->nodes[1],"Does it meow?");
-        strcpy(tree->nodes[2],"Does it have tusks?");
-        strcpy(tree->nodes[(2*1)+1],"a cat");
-        strcpy(tree->nodes[(2*1)+2],"a dog");
-        strcpy(tree->nodes[(2*2)+1],"a rhino");
-        strcpy(tree->nodes[(2*2)+2],"a gecko");
+        FILE* f = fopen(file, "r");
+        if (f == NULL){ printf("Error reading from file\n"); exit(1);}
+        char line[MAXSTRLEN];
+        int index;
+        while (fscanf(f,"%d %s",index, line) == 2){
+            strcpy(tree->nodes[index],line);
+        }
     }
     return tree;
 }
@@ -214,14 +214,14 @@ void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ){
 
 void WriteTree(TreeType tree, char *file){
     if (file == NULL){
-        printf("Not writing to file (none specified)");
+        printf("Not writing to file (none specified)\n");
         return;}
     FILE *f = fopen(file,"w");
     if (f==NULL){
         printf("Error opening file!\n");
         exit(1);
     }
-    printf("Writing to %s",file);
+    printf("Writing to %s\n",file);
     int i = 0;
     for (i; i < MAXNUMQS; i++){
         if (strlen(tree->nodes[i])>0){
