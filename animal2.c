@@ -47,6 +47,7 @@ TreeType InitTree (char *file) {
 }
 
 void PrintTree(TreeType tree){
+    printf("%s\n",tree->string);
     if (tree->left !=NULL){
         PrintTree(tree->left);
     }
