@@ -36,7 +36,13 @@ TreeType InitTree (char *file) {
         strcpy(tree->nodes[(2*2)+1],"a rhino");
         strcpy(tree->nodes[(2*2)+2],"a gecko");
     } else {
-        
+        strcpy(tree->nodes[0],"Is it furry?");
+        strcpy(tree->nodes[1],"Does it meow?");
+        strcpy(tree->nodes[2],"Does it have tusks?");
+        strcpy(tree->nodes[(2*1)+1],"a cat");
+        strcpy(tree->nodes[(2*1)+2],"a dog");
+        strcpy(tree->nodes[(2*2)+1],"a rhino");
+        strcpy(tree->nodes[(2*2)+2],"a gecko");
     }
     return tree;
 }
