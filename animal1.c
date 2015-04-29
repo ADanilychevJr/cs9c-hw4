@@ -47,6 +47,7 @@ TreeType InitTree (char *file) {
             sscanf(line,"%d %s",&index,line2);
             strcpy(tree->nodes[index],line2);
         }
+        PrintTree(tree);
         exit(0);
     }
     return tree;
