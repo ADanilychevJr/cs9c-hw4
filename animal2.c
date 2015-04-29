@@ -129,6 +129,7 @@ PositionType YesNode (TreeType tree, PositionType pos){
 PositionType NoNode (TreeType tree, PositionType pos){
     PositionType newpos;
     newpos->node = pos->node->right;
+    printf("%s\n",newpos->node->string);
     return newpos;
 }
 
