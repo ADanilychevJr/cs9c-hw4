@@ -26,7 +26,6 @@ TreeType InitTree () {
     for (i; i < MAXNUMQS; i++){
         char * question = calloc(MAXSTRLEN,1);
         (tree->nodes)[i] = question;
-        printf("%d",strlen(tree->nodes[i]));
     }
     strcpy(tree->nodes[0],"Is it furry?");
     strcpy(tree->nodes[1],"Does it meow?");
@@ -47,7 +46,7 @@ void PrintTree(TreeType tree){
 }
 
 PositionType Top (TreeType tree){
-    PositionType pos = calloc(1, sizeof(PositionType));
+    PositionType pos = malloc(sizeof(PositionType));
     if (strlen(tree->nodes[0]) > 0){
         printf("%d:%s:\n",strlen(tree->nodes[4]),tree->nodes[4]);
         printf("%d %s:\n",strlen(tree->nodes[2]),tree->nodes[2]);
