@@ -58,9 +58,8 @@ void PrintTree(TreeType tree){
 }
 
 PositionType Top (TreeType tree){
-    PositionType pos = malloc(sizeof(PositionType));
+    PositionType pos = malloc(sizeof(PositionType)+30);
     pos->node = tree;
-    PrintTree(tree);
     return pos;
 }
 
