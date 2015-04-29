@@ -52,7 +52,7 @@ PositionType Top (TreeType tree){
         printf("%d:%s:\n",strlen(tree->nodes[4]),tree->nodes[4]);
         printf("%d %s:\n",strlen(tree->nodes[2]),tree->nodes[2]);
         printf("%d %s:\n",strlen(tree->nodes[4]),tree->nodes[4]);
-        pos->nodeIndex = 0;
+        (*pos)->nodeIndex = 0;
         printf("asdf\n");
         return pos;
     } else {
