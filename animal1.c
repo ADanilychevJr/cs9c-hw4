@@ -52,6 +52,7 @@ PositionType Top (TreeType tree){
         printf("%d:%s:%p\n",strlen(tree->nodes[4]),tree->nodes[4]);
         printf("%d %s:\n",strlen(tree->nodes[2]),tree->nodes[2]);
         printf("%d %s:\n",strlen(tree->nodes[4]),tree->nodes[4]);
+        pos->nodeIndex = 0;
         return pos;
     } else {
         printf("Tree has not been properly initialized\n");
@@ -60,8 +61,8 @@ PositionType Top (TreeType tree){
 }
 
 boolean IsLeaf (TreeType tree, PositionType pos) {
-    int yes = (2* pos.nodeIndex) + 1;
-    int no = (2 * pos.nodeIndex) + 2;
+    int yes = (2* pos->nodeIndex) + 1;
+    int no = (2 * pos->nodeIndex) + 2;
     char * yesChild=NULL; char * noChild=NULL;
     if (isInBounds(yes)){
         yesChild = tree->nodes[yes];
@@ -69,8 +70,8 @@ boolean IsLeaf (TreeType tree, PositionType pos) {
     if (isInBounds(no)){
         noChild = tree->nodes[no];
     }
-    if (tree->nodes[pos.nodeIndex] == NULL){
-        printf("IsLeaf called on a Null string at pos %d \n",pos.nodeIndex);
+    if (tree->nodes[pos->nodeIndex] == NULL){
+        printf("IsLeaf called on a Null string at pos %d \n",pos->nodeIndex);
         return FALSE;
     } else if (yesChild !=NULL && noChild != NULL){//2 Children
         if ((strlen(yesChild) == 0) && (strlen(noChild) == 0)){
@@ -132,12 +133,12 @@ char * getUserInput(){
 }
 
 char *Question (TreeType tree, PositionType pos){
-    if (strlen(tree->nodes[pos.nodeIndex]) >0){
+    if (strlen(tree->nodes[pos->nodeIndex]) >0){
         char * question;
-        question = tree->nodes[pos.nodeIndex];
+        question = tree->nodes[pos->nodeIndex];
         return question;
     } else {
-        printf("Tried to get question at position %d but failed\n",pos.nodeIndex);
+        printf("Tried to get question at position %d but failed\n",pos->nodeIndex);
         PrintTree(tree);
         return NULL;
     }
@@ -145,20 +146,20 @@ char *Question (TreeType tree, PositionType pos){
 
 char *Guess (TreeType tree, PositionType pos){
     char *guess = calloc(MAXSTRLEN,sizeof(char));
-    if ((strlen(tree->nodes[pos.nodeIndex]) != 0)){
-        sprintf(guess, "%s%s%s", "is it ",tree->nodes[pos.nodeIndex],"?");
+    if ((strlen(tree->nodes[pos->nodeIndex]) != 0)){
+        sprintf(guess, "%s%s%s", "is it ",tree->nodes[pos->nodeIndex],"?");
         return guess;
     } else {
-        printf("Called guess on leaf w/ length 0: %s\n", tree->nodes[pos.nodeIndex]);
+        printf("Called guess on leaf w/ length 0: %s\n", tree->nodes[pos->nodeIndex]);
         return guess;
     }
 }
 
 PositionType YesNode (TreeType tree, PositionType pos){
-    PositionType newpos = (PositionType){0};
-    newpos.nodeIndex = (2 * pos.nodeIndex) + 1;
-    if (newpos.nodeIndex >= MAXNUMQS){
-        printf("Tree out of bounds problem for  yes index:%d\n",newpos.nodeIndex);
+    PositionType newpos = malloc(sizeof(PositionType));
+    newpos->nodeIndex = (2 * pos->nodeIndex) + 1;
+    if (newpos->nodeIndex >= MAXNUMQS){
+        printf("Tree out of bounds problem for  yes index:%d\n",newpos->nodeIndex);
         exit(0);
     } else {
         return newpos;
@@ -166,10 +167,10 @@ PositionType YesNode (TreeType tree, PositionType pos){
 }
 
 PositionType NoNode (TreeType tree, PositionType pos){
-    PositionType newpos = (PositionType){0};
-    newpos.nodeIndex = (2 * pos.nodeIndex) + 2;
-    if (newpos.nodeIndex >= MAXNUMQS){
-        printf("Tree out of bounds problem for no index:%d\n",newpos.nodeIndex);
+    PositionType newpos = malloc(sizeof(PositionType));
+    newpos->nodeIndex = (2 * pos->nodeIndex) + 2;
+    if (newpos->nodeIndex >= MAXNUMQS){
+        printf("Tree out of bounds problem for no index:%d\n",newpos->nodeIndex);
         exit(0);
     } else {
         return newpos;
@@ -177,8 +178,8 @@ PositionType NoNode (TreeType tree, PositionType pos){
 }
 
 void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
-    int yesPosition = (pos.nodeIndex * 2) +1;
-    int noPosition = (pos.nodeIndex *2) + 2;
+    int yesPosition = (pos->nodeIndex * 2) +1;
+    int noPosition = (pos->nodeIndex *2) + 2;
     if (!isInBounds(yesPosition)){
         printf("Not enough space to put new yes answer\n");
         return;
@@ -187,9 +188,9 @@ void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
         return;
     }
     char * old;
-    old = tree->nodes[pos.nodeIndex];
-    tree->nodes[pos.nodeIndex] = calloc(MAXSTRLEN,sizeof(char));
-    strcpy(tree->nodes[pos.nodeIndex],newQ);
+    old = tree->nodes[pos->nodeIndex];
+    tree->nodes[pos->nodeIndex] = calloc(MAXSTRLEN,sizeof(char));
+    strcpy(tree->nodes[pos->nodeIndex],newQ);
     strcpy(tree->nodes[yesPosition],old);//Yes answer is old
     strcpy(tree->nodes[noPosition],newA); //No answer is the newA
     return;
@@ -199,7 +200,7 @@ void GetNewInfo (TreeType tree, PositionType pos, char **newA, char **newQ){
     char * old;
     printf("I give up. What is it?");
     *newA = getUserInput();
-    old = tree->nodes[pos.nodeIndex];
+    old = tree->nodes[pos->nodeIndex];
     printf("Provide a question whose answer is yes for %s and no for %s\n",old,*newA);
     *newQ = getUserInput();
     return;
