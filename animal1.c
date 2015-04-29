@@ -41,7 +41,7 @@ TreeType InitTree (char *file) {
         char line[256];
         int index;
         printf("Got to here\n");
-        while (fscanf(f,"%d %s",index, line) == 2){
+        while (fscanf(f,"%d %s\n",index, line) != EOF){
             printf("%s\n",line);
             strcpy(tree->nodes[index],line);
         }
