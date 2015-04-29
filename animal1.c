@@ -22,7 +22,7 @@ struct positionStruct {
 /*This works, ignore "animal1.c:25: warning: statement with no effect"*/
 TreeType InitTree () {
     TreeType tree = malloc(sizeof(TreeType));
-    int i;
+    int i=0;
     for (i; i < MAXNUMQS; i++){
         char * question = calloc(MAXSTRLEN,sizeof(char));
         tree->nodes[i] = question;
