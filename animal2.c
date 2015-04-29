@@ -29,7 +29,7 @@ TreeType addNode(TreeType parent, char *str, boolean left){
 }
 
 
-TreeType InitTree () {
+TreeType InitTree (char *file) {
     TreeType tree = malloc(sizeof(TreeType));
     tree->string = calloc(MAXSTRLEN,1);
     strcpy(tree->string,"Is it furry?");
@@ -128,9 +128,6 @@ PositionType NoNode (TreeType tree, PositionType pos){
 }
 
 void ReplaceNode (TreeType tree, PositionType pos, char *newA, char *newQ){
-    int yesPosition = (pos->nodeIndex * 2) +1;
-    int noPosition = (pos->nodeIndex *2) + 2;
-    
     char * old = pos->node->string;
     tree->nodes[pos->nodeIndex] = calloc(MAXSTRLEN,sizeof(char));
     
